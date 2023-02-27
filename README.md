@@ -4,10 +4,11 @@ This project consists of using AzureML to find the best model through either Aut
 The investigated dataset contains about 10 years of daily weather observations from many locations across Australia.
 
 **RainTomorrow** is the target variable to predict. 
-It means -- did it rain the next day, Yes or No? 
+It means - Will it rain the next day, Yes or No? 
 This column is Yes if the rain for that day was 1mm or more.
 
 ## Project Set Up and Installation
+
 To turn this project into a professional portfolio project, 
 you are encouraged to explain how to set up this project in AzureML.
 
@@ -17,9 +18,9 @@ you are encouraged to explain how to set up this project in AzureML.
 I got the data from Kaggle, from [here](https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package?resource=download).
 The original columns of the dataset are the following:
 
--'Date': Date of acquisition;
--'Location': Location where data was collected;
--'MinTemp': Mininum temperature of a given day;
+- 'Date': Date of acquisition;
+- 'Location': Location where data was collected;
+- 'MinTemp': Mininum temperature of a given day;
 -'MaxTemp': Maximum temperature of a given day;
 -'Rainfall': rainfall level;
 -'Evaporation': evaporation level in a given day;
