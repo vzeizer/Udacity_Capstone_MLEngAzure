@@ -21,26 +21,26 @@ The original columns of the dataset are the following:
 - 'Date': Date of acquisition;
 - 'Location': Location where data was collected;
 - 'MinTemp': Mininum temperature of a given day;
--'MaxTemp': Maximum temperature of a given day;
--'Rainfall': rainfall level;
--'Evaporation': evaporation level in a given day;
--'Sunshine': subshine time;
--'WindGustDir': Wind direction in a given day;
--'WindGustSpeed': Wind speed for a given day;
--'WindDir9am': Wind direction at 9 am;
--'WindDir3pm': Wind direction at 3 pm;
--'WindSpeed9am': Wind Speed at 9 am;
--'WindSpeed3pm': Wind Speed at 3 pm;
--'Humidity9am': Humidity at 9 am;
--'Humidity3pm': Humidity at 3 pm;
--'Pressure9am': Pressure at 9 am;
--'Pressure3pm': Pressura at 3 pm;
--'Cloud9am': Cloud level at 9 am;
--'Cloud3pm': Cloud level at 3 pm;
--'Temp9am': Temperature at 9 am;
--'Temp3pm': Temperature at 3 pm;
--'RainToday': whether it rains today;
--'RainTomorrow': the target variable, whether it will rain tomorrow.
+- 'MaxTemp': Maximum temperature of a given day;
+- 'Rainfall': rainfall level;
+- 'Evaporation': evaporation level in a given day;
+- 'Sunshine': subshine time;
+- 'WindGustDir': Wind direction in a given day;
+- 'WindGustSpeed': Wind speed for a given day;
+- 'WindDir9am': Wind direction at 9 am;
+- 'WindDir3pm': Wind direction at 3 pm;
+- 'WindSpeed9am': Wind Speed at 9 am;
+- 'WindSpeed3pm': Wind Speed at 3 pm;
+- 'Humidity9am': Humidity at 9 am;
+- 'Humidity3pm': Humidity at 3 pm;
+- 'Pressure9am': Pressure at 9 am;
+- 'Pressure3pm': Pressura at 3 pm;
+- 'Cloud9am': Cloud level at 9 am;
+- 'Cloud3pm': Cloud level at 3 pm;
+- 'Temp9am': Temperature at 9 am;
+- 'Temp3pm': Temperature at 3 pm;
+- 'RainToday': whether it rains today;
+- 'RainTomorrow': the target variable, whether it will rain tomorrow.
 
 ### Data Cleaning
 
@@ -57,6 +57,7 @@ Keep in mind that the SelectKBest method selects the features according to the *
 
 
 ### Task
+
 The goal of this project is to predict next-day rain by training classification models on the target variable *RainTomorrow*.
 The features used in this project were shown above.
 
