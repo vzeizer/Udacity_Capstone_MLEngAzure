@@ -147,7 +147,7 @@ Run details of hyperparameter tuning experiment
 
 Best Model and RunID
 
-![hyperpara_rundetails](./Capstone_BestmodelID_hyperparam.png)
+![hyperpara_rundetails](./Capstone_bestmodelID_hyperparam.png)
 
 
 ## Model Deployment
