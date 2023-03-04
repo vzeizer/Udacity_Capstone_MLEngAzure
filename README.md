@@ -63,9 +63,11 @@ The features used in this project were shown above.
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
-
+I am using my own Azure Workspace to do the project.
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+
+![automl_rundetails](./Capstone_Rundetails_AutoML.png)
 
 The AutoML experiment settings are the following:
 
@@ -87,6 +89,9 @@ In order to perform hyperparameter tuning, the number of cross validations were 
 ### Results
 *TODO*: What are the results you got with your automated ML model? 
 What were the parameters of the model? How could you have improved it?
+
+
+
 
 *TODO* Remember to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
