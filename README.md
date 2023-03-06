@@ -79,24 +79,24 @@ The AutoML experiment settings are the following:
     "compute_target":cpu_cluster,
     "featurization":'auto',
     "training_data":data_rain,
-    "label_column_name":'y',
+    "label_column_name":'RainTomorrow',
     "n_cross_validations":5,
     "enable_early_stopping":True}
 **
 
 briefly explaining it, the AutoML experiment will be run for 30 minutes, the task is classification, the  primary metric to choose the best model is accuracy.
 It is also going to use a pre-configured cpu_cluster for the training data which was previously cleaned and prepared for Machine Learning.
-The renamed target is 'y', which in this case is "RainTomorrow".
+The target variable is "RainTomorrow".
 In order to perform hyperparameter tuning, the number of cross validations were chosen as to be 5, and early stopping was enabled in order to run quicker a given model, if the metric (accuracy) keeps not improving.
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? 
 What were the parameters of the model? How could you have improved it?
 
-**best model: AutoML_cfd1bd58-5b71-46d3-a071-f456dd1b2175_31 Pipeline(memory=None,
+**best model: Pipeline(memory=None,
          steps=[('datatransformer',
                  DataTransformer(enable_dnn=False, enable_feature_sweeping=True, feature_sweeping_config={}, feature_sweeping_timeout=86400, featurization_config=None, force_text_dnn=False, is_cross_validation=True, is_onnx_compatible=False, observer=None, task='classification', working_dir='/mnt/batch/tasks/shared/LS_root/mount...
-                 PreFittedSoftVotingClassifier(classification_labels=array([0, 1]), estimators=[('24', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=1, eta=0.05, gamma=0, max_depth=6, max_leaves=0, n_estimators=200, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=0.625, reg_lambda=0.8333333333333334, subsample=0.8, tree_method='auto'))], verbose=False)), ('0', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('lightgbmclassifier', LightGBMClassifier(min_data_in_leaf=20, n_jobs=1, problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=None))], verbose=False)), ('22', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=True)), ('lightgbmclassifier', LightGBMClassifier(boosting_type='gbdt', colsample_bytree=0.4955555555555555, learning_rate=0.05789894736842106, max_bin=210, max_depth=5, min_child_weight=0, min_data_in_leaf=0.07931241379310346, min_split_gain=0.3684210526315789, n_estimators=600, n_jobs=1, num_leaves=137, problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=None, reg_alpha=0.5789473684210527, reg_lambda=0.42105263157894735, subsample=0.05))], verbose=False)), ('3', Pipeline(memory=None, steps=[('sparsenormalizer', Normalizer(copy=True, norm='l2')), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=0.7, eta=0.01, gamma=0.01, max_depth=7, max_leaves=31, n_estimators=10, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=2.1875, reg_lambda=1.0416666666666667, subsample=1, tree_method='auto'))], verbose=False)), ('21', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=0.5, eta=0.2, gamma=0, max_depth=7, max_leaves=7, n_estimators=25, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=0, reg_lambda=0.20833333333333334, subsample=1, tree_method='auto'))], verbose=False)), ('11', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=0.6, eta=0.3, gamma=0, max_depth=6, max_leaves=0, n_estimators=10, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=0.3125, reg_lambda=2.3958333333333335, subsample=1, tree_method='auto'))], verbose=False)), ('30', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=1, eta=0.1, gamma=0.1, max_depth=6, max_leaves=0, n_estimators=800, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=0, reg_lambda=2.3958333333333335, subsample=0.7, tree_method='auto'))], verbose=False)), ('13', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('sgdclassifierwrapper', SGDClassifierWrapper(alpha=7.5510448979591835, class_weight='balanced', eta0=0.001, fit_intercept=True, l1_ratio=0.42857142857142855, learning_rate='constant', loss='modified_huber', max_iter=1000, n_jobs=1, penalty='none', power_t=0.7777777777777777, random_state=None, tol=0.0001))], verbose=False)), ('2', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('extratreesclassifier', ExtraTreesClassifier(bootstrap=True, ccp_alpha=0.0, class_weight='balanced', criterion='gini', max_depth=None, max_features='sqrt', max_leaf_nodes=None, max_samples=None, min_impurity_decrease=0.0, min_impurity_split=None, min_samples_leaf=0.01, min_samples_split=0.15052631578947367, min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=1, oob_score=True, random_state=None, verbose=0, warm_start=False))], verbose=False))], flatten_transform=None, weights=[0.06666666666666667, 0.13333333333333333, 0.13333333333333333, 0.26666666666666666, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.13333333333333333]))],
+                 StackEnsembleClassifier(base_learners=[('1', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('xgboostclassifier', XGBoostClassifier(n_jobs=1, problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, tree_method='auto'))], verbose=False)), ('0', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('lightgbmclassifier', LightGBMClassifier(min_data_in_leaf=20, n_jobs=1, problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=None))], verbose=False)), ('14', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=1, eta=0.3, gamma=0, max_depth=10, max_leaves=511, n_estimators=10, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=2.1875, reg_lambda=0.4166666666666667, subsample=0.5, tree_method='auto'))], verbose=False)), ('6', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=0.5, eta=0.3, gamma=0, max_depth=10, max_leaves=255, n_estimators=10, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=0, reg_lambda=0.10416666666666667, subsample=0.7, tree_method='auto'))], verbose=False)), ('9', Pipeline(memory=None, steps=[('standardscalerwrapper', StandardScalerWrapper(copy=True, with_mean=False, with_std=False)), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=0.5, eta=0.5, gamma=0, max_depth=6, max_leaves=3, n_estimators=10, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=0.7291666666666667, reg_lambda=2.3958333333333335, subsample=0.8, tree_method='auto'))], verbose=False)), ('7', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('logisticregression', LogisticRegression(C=1.7575106248547894, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='lbfgs', tol=0.0001, verbose=0, warm_start=False))], verbose=False)), ('3', Pipeline(memory=None, steps=[('sparsenormalizer', Normalizer(copy=True, norm='l2')), ('xgboostclassifier', XGBoostClassifier(booster='gbtree', colsample_bytree=0.7, eta=0.01, gamma=0.01, max_depth=7, max_leaves=31, n_estimators=10, n_jobs=1, objective='reg:logistic', problem_info=ProblemInfo(gpu_training_param_dict={'processing_unit_type': 'cpu'}), random_state=0, reg_alpha=2.1875, reg_lambda=1.0416666666666667, subsample=1, tree_method='auto'))], verbose=False)), ('13', Pipeline(memory=None, steps=[('maxabsscaler', MaxAbsScaler(copy=True)), ('sgdclassifierwrapper', SGDClassifierWrapper(alpha=7.5510448979591835, class_weight='balanced', eta0=0.001, fit_intercept=True, l1_ratio=0.42857142857142855, learning_rate='constant', loss='modified_huber', max_iter=1000, n_jobs=1, penalty='none', power_t=0.7777777777777777, random_state=None, tol=0.0001))], verbose=False))], meta_learner=LogisticRegressionCV(Cs=10, class_weight=None, cv=None, dual=False, fit_intercept=True, intercept_scaling=1.0, l1_ratios=None, max_iter=100, multi_class='auto', n_jobs=None, penalty='l2', random_state=None, refit=True, scoring=Scorer(metric='accuracy'), solver='lbfgs', tol=0.0001, verbose=0), training_cv_folds=5))],
          verbose=False)
 Y_transformer(['LabelEncoder', LabelEncoder()])
 **
@@ -107,14 +107,14 @@ A little bit hard to explain these model parameters...
 
 Run details of AutoML experiment
 
-![automl_rundetails](./Capstone_Rundetails_AutoML.png)
+![automl_rundetails](./Capstone_AutoML_RunDetails.png)
 
 
 Best Model and RunID
 
-![automl_rundetails](./Capstone_BestmodeRunID_AutoML.png)
+![automl_rundetails](./Capstone_AutoML_BestRun.png)
 
-The best model of AutoML had an accuracy of **0.9178** as shown in the data guardrails of the automl experiment.
+The best model of AutoML had an accuracy of **0.85** as shown in the data guardrails of the automl experiment.
 
 ## Hyperparameter Tuning
 I chose the Logistic Regression to test as model in this dataset because it is a rather simple model, and it has some kind of success in modeling classification problems.
@@ -153,14 +153,23 @@ Best Model and RunID
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
-## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. 
-Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+A deployment was performed for the best model (Stack Ensemble, from AutoML experiment) using ACI Web Service using cpu_cores=1, memory_gb=1.
 
-the link to the capstone screencast is provided here
+The endpoint working is shown here:
+
+![endpoint](./Capstone_endpoint.png)
+
+The endpoint response working here:
+
+![endpoint](./Capstone_responseendpoint.png)
+
+
+
+## Screen Recording
+
+the link to the capstone screencast is provided [here](https://www.youtube.com/watch?v=aI-ckzpzJ-k)
+Just do not care about the background noise that is happening because of my laptop, unfortunately.
+
 
 ## Standout Suggestions
 
