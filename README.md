@@ -9,8 +9,10 @@ This column is Yes if the rain for that day was 1mm or more.
 
 ## Project Set Up and Installation
 
-To turn this project into a professional portfolio project, 
-you are encouraged to explain how to set up this project in AzureML.
+1. You login to your Microsoft Azure Account.
+2. You create your workspace.
+3. you clone this repo with *git clone*.
+4. you execute the notebooks for AutoML and Hyper parameter tuning approaches.
 
 ## Dataset
 
